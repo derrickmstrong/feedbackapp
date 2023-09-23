@@ -37,6 +37,10 @@
     font-size: 19px;
   }
 
+  .text-display {
+    margin: 10px 25px;
+  }
+
   .close {
     position: absolute;
     top: 10px;
