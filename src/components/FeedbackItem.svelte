@@ -1,12 +1,17 @@
 <script>
+    import { createEventDispatcher } from "svelte";
     import Card from "./Card.svelte";
 
     export let id;
     export let rating;
     export let text;
 
+    const dispatch = createEventDispatcher();
+
     const handleDelete = (id) => {
-        console.log(id);
+        // console.log(id);
+        // create a custom event (works like an emit in Vue.js but must be passed up to the parent component)
+        dispatch("delete", id);
     }
 </script>
 

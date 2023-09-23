@@ -23,11 +23,18 @@
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 		}
 	]
+
+	// create a function to delete feedback
+	const deleteFeedback = (e) => {
+		console.log(e);
+		const itemId = e.detail;
+		feedback = feedback.filter((f) => f.id !== itemId);
+	}
 	
 </script>
 
 <main class="container">
-	<FeedbackList feedback={feedback} />
+	<FeedbackList feedback={feedback} on:delete={deleteFeedback} />
 </main>
 
 <style>
