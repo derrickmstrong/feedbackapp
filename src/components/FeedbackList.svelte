@@ -1,17 +1,7 @@
 <script>
     import { fade, scale } from "svelte/transition";
-    // import { onDestroy } from "svelte";
-    import FeedbackItem from "./FeedbackItem.svelte";
     import { FeedbackStore } from "../store/index.js";
-    
-    // let feedback = [];
-
-    // FeedbackStore.subscribe((data) => feedback = data);
-
-    // // unsubscribe from store when component is destroyed
-    // onDestroy(() => unsubscribe());
-
-    // console.log(feedback);
+    import FeedbackItem from "./FeedbackItem.svelte";
 </script>
 
 <ul>

@@ -29,14 +29,12 @@
     const handleSelected = (e) => rating = e.detail;
     
     const handleSubmit = () => {
-        console.log('testing');
         if (text.trim().length > min) {
             const newFeedback = {
                 id: uuidv4(),
                 rating: +rating,
                 text,
             };
-            console.log('newFeedback', newFeedback);
             // send feedback to store
             FeedbackStore.update((currentFeedback) => {
                 return [newFeedback, ...currentFeedback];
