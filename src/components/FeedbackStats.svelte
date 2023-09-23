@@ -1,6 +1,13 @@
 <script>
-    export let count;
-    export let average;
+    import {FeedbackStore} from "../store/index.js";
+
+    // get count of feedback
+	$: count = $FeedbackStore.length;
+
+	// get the average rating ofr feedback
+	$: average = count > 0 ? Math.round($FeedbackStore.reduce((total, item) => {
+		return total + item.rating;
+	}, 0) / count) : 0;
 </script>
 
 <div class="feedback-stats">

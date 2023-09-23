@@ -1,6 +1,6 @@
 <script>
     import {v4 as uuidv4} from 'uuid';
-    import {createEventDispatcher} from 'svelte';
+    import {FeedbackStore} from "../store/index.js";
     import Button from "./Button.svelte";
     import Card from "./Card.svelte";
     import RatingSelect from "./RatingSelect.svelte";
@@ -11,7 +11,6 @@
     let min = 10;
     let msg = '';
 
-    const dispatch = createEventDispatcher();
 
     const handleInput = (e) => {
         text = e.target.value;
@@ -38,9 +37,10 @@
                 text,
             };
             console.log('newFeedback', newFeedback);
-            // send feedback to parent component
-            dispatch('submit', newFeedback);
-
+            // send feedback to store
+            FeedbackStore.update((currentFeedback) => {
+                return [newFeedback, ...currentFeedback];
+            });
             // reset form
             text = '';
         }

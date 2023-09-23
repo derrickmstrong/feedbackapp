@@ -1,17 +1,15 @@
 <script>
-    import { createEventDispatcher } from "svelte";
     import Card from "./Card.svelte";
-
+    import {FeedbackStore} from "../store/index.js";
+    
     export let id;
     export let rating;
     export let text;
 
-    const dispatch = createEventDispatcher();
-
-    const handleDelete = (id) => {
-        // console.log(id);
-        // create a custom event (works like an emit in Vue.js but must be passed up to the parent component)
-        dispatch("delete", id);
+    const handleDelete = (itemId) => {
+        FeedbackStore.update((currentFeedback) => {
+            return currentFeedback.filter((item) => item.id !== itemId);
+        });
     }
 </script>
 
