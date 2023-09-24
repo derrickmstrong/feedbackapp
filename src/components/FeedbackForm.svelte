@@ -47,7 +47,7 @@
 
 <Card>
     <header>
-        <h2>How would you like to rate our service?</h2>
+        <h2>How would you rate Svelte?</h2>
     </header>
     <form on:submit|preventDefault={handleSubmit}>
         <RatingSelect on:rating-select={handleSelected} />
