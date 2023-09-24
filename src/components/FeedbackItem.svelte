@@ -1,5 +1,5 @@
 <script>
-    import Card from "./Card.svelte";
+    import Card from "../common/Card.svelte";
     import {FeedbackStore} from "../store/index.js";
     
     export let id;

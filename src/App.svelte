@@ -9,6 +9,3 @@
 	<FeedbackStats />
 	<FeedbackList />
 </main>
-
-<style>
-</style>

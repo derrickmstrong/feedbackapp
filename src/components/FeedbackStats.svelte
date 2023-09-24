@@ -3,7 +3,7 @@
 
     // get count of feedback
 	$: count = $FeedbackStore.length;
-	// get the average rating ofr feedback
+	// get the average rating of feedback
 	$: average = count > 0 ? Math.round($FeedbackStore.reduce((total, item) => {
 		return total + item.rating;
 	}, 0) / count) : 0;

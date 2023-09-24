@@ -1,8 +1,8 @@
 <script>
     import {v4 as uuidv4} from 'uuid';
     import {FeedbackStore} from "../store/index.js";
-    import Button from "./Button.svelte";
-    import Card from "./Card.svelte";
+    import Button from "../common/Button.svelte";
+    import Card from "../common/Card.svelte";
     import RatingSelect from "./RatingSelect.svelte";
     
     let rating = 10;
